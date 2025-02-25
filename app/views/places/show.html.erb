@@ -1,15 +1,17 @@
 <h1><%=@place["name"]%></h1>
 
 <h2> Entries </h2>
-<ul>
-  <% for entry in @entries %>
-    <li> <%= entry["title"] %> 
-    <%= entry["date"]%>
-    <%= entry["description"]%>
-  <%end%>
-  </ul>
 
-  <a href = "/entries/new?place_id = <%= @place["id"] %>"> New Entry</a>
+  <% for entry in @entries %>
+    <div> 
+    <strong><%= entry["title"] %></strong> <br> 
+    <em> <%= entry["date"]%> </em> <br>
+    <%= entry["description"]%>
+   <div>
+   <br>
+  <%end%>
+
+  <a href="/entries/new?place_id=<%= @place["id"] %>">New Entry</a>
   <br>
   <br>
   <a href = "/places"> Back to Places </a>
